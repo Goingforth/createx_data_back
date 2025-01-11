@@ -1,0 +1,27 @@
+{
+  "name": "createx_data_back",
+  "version": "1.0.0",
+  "description": "back",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor server.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goingforth/createx_data_back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goingforth/createx_data_back/issues"
+  },
+  "homepage": "https://github.com/Goingforth/createx_data_back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3",
+    "morgan": "^1.10.0"
+  }
+}
