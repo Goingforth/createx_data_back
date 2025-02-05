@@ -6,36 +6,32 @@ const schema = new Schema({
         type: String,
         required: true,
     },
-    title: {
+    profileImg: {
         type: String,
         required: true,
     },
-    categories: {
+    image: {
         type: String,
         required: true,
     },
-    date: {
+    content: {
         type: String,
         required: true,
     },
-    comments: [{
-        name: { type: String, required: true },
-        comment: { type: String, required: true },
-        date: { type: Date, required: true },
-        reply: { type: String, required: false }
-    }],
-    text: {
+    name: {
+        type: String,
+        required: true,
+    },
+    position: {
         type: String,
         required: true,
     }
 },
     {
-        collection: 'news'
+        collection: 'testimonials'
     }
 );
 
-const News = mongoose.model('news', schema);
+const Testimonials = mongoose.model('testimonials', schema);
 
-module.exports = News;
-
-
+module.exports = Testimonials;

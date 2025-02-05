@@ -6,36 +6,28 @@ const schema = new Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String,
         required: true,
     },
-    categories: {
+    category: {
         type: String,
         required: true,
     },
-    date: {
-        type: String,
-        required: true,
-    },
-    comments: [{
-        name: { type: String, required: true },
-        comment: { type: String, required: true },
-        date: { type: Date, required: true },
-        reply: { type: String, required: false }
-    }],
-    text: {
+    to: {
         type: String,
         required: true,
     }
 },
     {
-        collection: 'news'
+        collection: 'portfolioCard'
     }
 );
 
-const News = mongoose.model('news', schema);
+const PortfolioCard = mongoose.model('portfolio_card', schema);
 
-module.exports = News;
-
-
+module.exports = PortfolioCard;

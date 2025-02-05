@@ -6,38 +6,50 @@ const schema = new Schema({
         type: String,
         required: true,
     },
-    image: {
+    page: {
         type: String,
         required: true,
     },
-    name: {
+    title: {
         type: String,
         required: true,
     },
-    position: {
+    note: {
         type: String,
         required: true,
     },
-    social: {
-        linkedin: {
+    info: {
+        location: {
             type: String,
             required: true,
         },
-        twitter: {
+        client: {
             type: String,
             required: true,
         },
-        facebook: {
+        architect: {
             type: String,
             required: true,
         },
-    },
+        size: {
+            type: String,
+            required: true,
+        },
+        value: {
+            type: String,
+            required: true,
+        },
+        completed: {
+            type: String,
+            required: true,
+        }
+    }
+},
+    {
+        collection: 'projects'
+    }
+);
 
-}, {
-    collection: 'team'
-});
+const Projects = mongoose.model('projects', schema);
 
-const Team = mongoose.model('team', schema);
-
-module.exports = Team;
-
+module.exports = Projects;
