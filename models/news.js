@@ -22,7 +22,13 @@ const schema = new Schema({
         name: { type: String, required: true },
         comment: { type: String, required: true },
         date: { type: Date, required: true },
-        reply: { type: String, required: false }
+        replyes: [
+            {
+                name: { type: String, required: true },
+                comment: { type: String, required: true },
+                date: { type: Date, required: true }
+            },
+        ]
     }],
     text: {
         type: String,

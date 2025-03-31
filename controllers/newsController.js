@@ -1,5 +1,6 @@
 const News = require('../models/news');
 const qs = require('qs');
+const { ObjectId } = require('mongodb');
 
 const dataNews = async (req, res, next) => {
     const { limit, categories } = qs.parse(req.query);
@@ -21,9 +22,6 @@ const dataNews = async (req, res, next) => {
 };
 const dataNewsByID = async (req, res, next) => {
     const id = req.params.id;
-    console.log(id);
-    console.log(req.params.id);
-
     try {
 
         const data = await News.findById(id);
@@ -35,7 +33,42 @@ const dataNewsByID = async (req, res, next) => {
     }
 };
 
+const postCommentByIdNews = async (req, res, next) => {
+    const id = req.params.id;
+    const newPost = req.body;
+    try {
+        const news = await News.findById(id);
+        news.comments = [...news.comments, newPost];
+        await news.save();
+
+        res.json(news.comments);
+    }
+    catch (error) {
+
+        next(error);
+    }
+};
+const postCommentReplyByIdNews = async (req, res, next) => {
+    const idComment = req.params.id;
+    const reply = req.body;
+    try {
+        await News.updateOne({ "comments._id": idComment }, {
+            $push: {
+                "comments.$.replyes": reply
+            }
+        });
+        res.json("ok");
+
+
+    }
+    catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
     dataNews,
-    dataNewsByID
+    dataNewsByID,
+    postCommentByIdNews,
+    postCommentReplyByIdNews
 };

@@ -17,6 +17,7 @@ const Projects = require("../models/projects");
 const MediaTabs = require("../models/mediaTabs");
 const Gallery = require("../models/gallerys");
 const Benefits = require("../models/benefits");
+const Offices = require("../models/offices");
 // const { ctrlWrapper } = require("../helpers/coreValues");
 
 
@@ -200,6 +201,15 @@ const dataBenefitsByName = async (req, res, next) => {
         next(error);
     }
 };
+const dataOffices = async (req, res, next) => {
+    try {
+        const data = await Offices.find();
+        res.json(data);
+    }
+    catch (error) {
+        next(error);
+    }
+};
 
 module.exports = {
     dataTeam,
@@ -220,5 +230,6 @@ module.exports = {
     dataProjects,
     dataMediaTabs,
     dataGalleryByName,
-    dataBenefitsByName
+    dataBenefitsByName,
+    dataOffices,
 };

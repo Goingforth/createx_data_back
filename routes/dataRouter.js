@@ -29,10 +29,14 @@ dataRouter.get('/projects', ctrl.dataProjects);
 dataRouter.get('/media_tabs', ctrl.dataMediaTabs);
 dataRouter.get('/gallerys', ctrl.dataGalleryByName);
 dataRouter.get('/benefits', ctrl.dataBenefitsByName);
+dataRouter.get('/offices', ctrl.dataOffices);
 
 // dataRouter.get("/news/categories", ctrlNews.dataNewsByCategory);
 // dataRouter.get("/news/limit", ctrlNews.dataNewsByLimit);
 dataRouter.get("/news/:id", ctrlNews.dataNewsByID);
 dataRouter.get("/news", ctrlNews.dataNews);
+dataRouter.post("/news/comments/:id", ctrlNews.postCommentByIdNews);
+// dataRouter.get("/news/:id/comments?idComment", ctrlNews.dataCommentByIdNews);
+dataRouter.post("/news/comments/reply/:id", ctrlNews.postCommentReplyByIdNews);
 
 module.exports = dataRouter;
