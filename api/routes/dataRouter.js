@@ -10,7 +10,7 @@ dataRouter.get('/', (req, res) => {
     res.end();
 });
 
-dataRouter.get('/team', ctrl.dataTeam);
+// dataRouter.get('/team', ctrl.dataTeam);
 // dataRouter.get('/history', ctrl.dataHistory);
 // dataRouter.get('/vacancies', ctrl.dataVacancies);
 // dataRouter.get('/statistics', ctrl.dataStatistics);
@@ -31,12 +31,11 @@ dataRouter.get('/team', ctrl.dataTeam);
 // dataRouter.get('/benefits', ctrl.dataBenefitsByName);
 // dataRouter.get('/offices', ctrl.dataOffices);
 
-// dataRouter.get("/news/categories", ctrlNews.dataNewsByCategory);
-// dataRouter.get("/news/limit", ctrlNews.dataNewsByLimit);
+
 dataRouter.get("/news/:id", ctrlNews.dataNewsByID);
 dataRouter.get("/news", ctrlNews.dataNews);
 dataRouter.post("/news/comments/:id", ctrlNews.postCommentByIdNews);
-// dataRouter.get("/news/:id/comments?idComment", ctrlNews.dataCommentByIdNews);
+
 dataRouter.post("/news/comments/reply/:id", ctrlNews.postCommentReplyByIdNews);
 
 module.exports = dataRouter;
