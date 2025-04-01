@@ -2,7 +2,7 @@ const express = require("express");
 
 const dataRouter = express.Router();
 
-const ctrl = require("../controllers/dataController");
+//const ctrl = require("../controllers/dataController");
 const ctrlNews = require("../controllers/newsController");
 // const { authToken } = require("../middlewares/auth-middleware");
 dataRouter.get('/', (req, res) => {
