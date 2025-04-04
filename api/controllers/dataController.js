@@ -18,10 +18,7 @@ const MediaTabs = require("../models/mediaTabs");
 const Gallery = require("../models/gallerys");
 const Benefits = require("../models/benefits");
 const Offices = require("../models/offices");
-// const { ctrlWrapper } = require("../helpers/coreValues");
 
-
-// const mongoose = require("mongoose");
 
 const dataTeam = async (req, res, next) => {
     try {

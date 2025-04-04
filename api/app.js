@@ -4,11 +4,7 @@ const cors = require("cors");
 
 require("dotenv").config();
 
-// const authRouter = require("./routes/api/auth");
-// const contactsRouter = require("./routes/api/contacts");
-
 const dataRouter = require("./routes/dataRouter");
-// const { dataTeam } = require("./controllers/dataController");
 
 const app = express();
 
@@ -19,10 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-
-// app.use("/users", authRouter);
-// app.use("/api/contacts", contactsRouter);
-// app.use("/data", dataRouter);
 app.use("/data", dataRouter)
 
 app.use((req, res) => {
