@@ -20,15 +20,9 @@ const schema = new Schema({
     },
     comments: [{
         name: { type: String, required: true },
+        replyName: { type: String, required: false },
         comment: { type: String, required: true },
         date: { type: Date, required: true },
-        replyes: [
-            {
-                name: { type: String, required: true },
-                comment: { type: String, required: true },
-                date: { type: Date, required: true }
-            },
-        ]
     }],
     text: {
         type: String,

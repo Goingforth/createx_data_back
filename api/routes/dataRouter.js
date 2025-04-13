@@ -4,7 +4,6 @@ const dataRouter = express.Router();
 
 const ctrl = require("../controllers/dataController");
 const ctrlNews = require("../controllers/newsController");
-// const { authToken } = require("../middlewares/auth-middleware");
 dataRouter.get('/', (req, res) => {
     res.send("data Ok!");
     res.end();
@@ -35,7 +34,5 @@ dataRouter.get('/offices', ctrl.dataOffices);
 dataRouter.get("/news/:id", ctrlNews.dataNewsByID);
 dataRouter.get("/news", ctrlNews.dataNews);
 dataRouter.post("/news/comments/:id", ctrlNews.postCommentByIdNews);
-
-dataRouter.post("/news/comments/reply/:id", ctrlNews.postCommentReplyByIdNews);
 
 module.exports = dataRouter;

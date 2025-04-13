@@ -48,27 +48,29 @@ const postCommentByIdNews = async (req, res, next) => {
         next(error);
     }
 };
-const postCommentReplyByIdNews = async (req, res, next) => {
-    const idComment = req.params.id;
-    const reply = req.body;
-    try {
-        await News.updateOne({ "comments._id": idComment }, {
-            $push: {
-                "comments.$.replyes": reply
-            }
-        });
-        res.json("ok");
+// const postCommentReplyByIdNews = async (req, res, next) => {
+//     const idComment = req.params.id;
+//     const reply = req.body;
+//     try {
+//         await News.updateOne({ "comments._id": idComment }, {
+//             $push: {
+//                 "comments.replyes": reply
+//                 // "comments.$.replyes": reply
+//             }
 
+//         });
+//         // res.json("ok");
+//         res.json({ reply, idComment });
 
-    }
-    catch (error) {
-        next(error);
-    }
-};
+//     }
+//     catch (error) {
+//         next(error);
+//     }
+// };
 
 module.exports = {
     dataNews,
     dataNewsByID,
     postCommentByIdNews,
-    postCommentReplyByIdNews
+    // postCommentReplyByIdNews
 };
