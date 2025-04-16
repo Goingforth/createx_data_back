@@ -20,11 +20,5 @@ mongoose
     });
 
 
-// app.use(express.json()) // for parsing application/json
-// app.use(express.urlencoded({ extended: false }));
 
-// app.get('/', (req, res) => {
-//     res.send("Server Ok!");
-//     res.end();
-// });
 
