@@ -9,7 +9,10 @@ https://www.figma.com/file/r9RnpJZ6IwYEDAGiymdXBj/YouTube-Createx-Marathon?node-
 ## Technology stack
 
 - front :
-  React + TypeScript + Vite : https://createx-vite-ts.netlify.app/
+  React + TypeScript + Vite :
+  https://github.com/Goingforth/createx
+
+  https://createx-vite-ts.netlify.app/
 
 flex, grid, video, slider, send form, axios
 
