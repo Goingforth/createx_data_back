@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use("/data", dataRouter)
 
 app.use((req, res) => {
-    res.status(404).json({ message: "Not founds page" });
+    res.status(404).json({ message: "This is site createx-back.Welcome!" });
 });
 
 app.use((err, req, res, next) => {
